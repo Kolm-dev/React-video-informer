@@ -1,0 +1,92 @@
+@font-face {
+	font-family: "Main";
+	src: url("./assets//fonts/RobotoCondensed-Regular.ttf");
+	unicode-range: U+0000-00FF, U+0400-04FF;
+	font-weight: 400;
+}
+.footer {
+	position: sticky;
+	bottom: 0;
+	background-color: transparent;
+	text-align: right;
+	margin-right: 10px;
+}
+
+.git-url {
+	width: 55px;
+	background: transparent;
+}
+
+.app {
+	background-color: rgb(4, 117, 87);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 0px;
+}
+
+.app button {
+	width: 100px;
+	height: 35px;
+	margin-left: 10px;
+	font-family: "Main";
+	background-image: url("./assets/button.png");
+	color: white;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-origin: border-box;
+	border: none;
+	border-radius: 15px;
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.app button:hover {
+	background-image: none;
+	background-color: coral;
+	cursor: pointer;
+}
+
+h1 {
+	font-family: "Main", sans-serif;
+	font-size: 36px;
+	color: rgb(205, 128, 224);
+	padding: 2px;
+	letter-spacing: 7px;
+	position: relative;
+}
+
+.search-input {
+	width: 320px;
+	height: 30px;
+	font-family: "Main";
+	font-size: 14px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-color: #3077be;
+	border-radius: 10px;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+.search-input[type="text"]:focus {
+	color: #212529;
+	background-color: #e7e6e6;
+	border-color: #696969;
+	outline: 0;
+}
+
+.search-input::placeholder {
+	color: #031221;
+	opacity: 0.4;
+	font-size: 15px;
+	text-transform: none;
+}
+
+.wrapper {
+	min-height: 100vh;
+	margin-bottom: -50px; /* высота футера */
+}
