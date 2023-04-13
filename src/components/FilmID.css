@@ -1,0 +1,59 @@
+.filmID {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.loading {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 10px;
+	align-items: center;
+}
+
+.filmID-poster {
+	width: 350px;
+	height: auto;
+	margin-top: 30px;
+	border-radius: 15px;
+	margin-right: 50px;
+}
+
+.filmID-title {
+	text-align: right;
+	font-family: Verdana;
+}
+
+.subtitle {
+	color: #242323;
+	font-family: "Trebuchet MS";
+}
+
+.button-favorite {
+	margin-right: 10px;
+	position: relative;
+	top: 5px;
+	cursor: pointer;
+}
+
+.button-favorite:hover {
+	transform: scale(1.2);
+	transition: all 0.5s step-end;
+}
+
+.filmID-overview {
+	font-size: 17px;
+	text-align: center;
+	padding: 10px;
+}
+
+.text {
+	font-size: 17px;
+}
+
+.text span {
+	font-family: Cambria;
+	letter-spacing: 0.1px;
+}

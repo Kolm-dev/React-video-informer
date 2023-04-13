@@ -2,16 +2,18 @@ import axios from "axios"
 import React, { useState } from "react"
 import "./App.css"
 import Info from "./components/Info"
+import Button from './assets/button.svg'
 function App() {
 	const [film, setFilm] = useState([])
-	const [filmID, setFilmID] = useState({})
-	const [value, setValue] = useState('')
+	const [visible, setVisible] = useState(true)
+	const [value, setValue] = useState()
 	const inputHandler = (e) => {
 		setValue(e.target.value)
 		value.replace(/\s/g, "+")
 	}
 	const URL = `https://api.themoviedb.org/3/search/movie?api_key=101e4f62667bccf1cbfbda8d5a381a88&query=${value}&language=ru-RU&include_image_language=ru,null`
 	const getInfo = () =>
+	setVisible(!visible)
 	axios
 	.get(
 		URL
@@ -19,16 +21,7 @@ function App() {
 		.then(res => setFilm(res.data.results))
 		.catch(e => console.error(e))
 		
-	const getInfoID = (id) => {
-		axios
-			.get(
-				`https://api.themoviedb.org/3/movie/${id}?api_key=101e4f62667bccf1cbfbda8d5a381a88&language=ru-RU&include_image_language=ru,null`
-			)
-			.then(res => {setFilmID(res.data)
-			setFilm([])})
-			.catch(err => console.error(err))
-		}
-
+	
 
 	return (
 		<>
@@ -45,10 +38,10 @@ function App() {
 							name="search"
 							id="search"
 						/>
-						<button onClick={getInfo}>Поиск</button>
+						<button onClick={getInfo}> <img className="button-image" width="20px" src={Button} alt="button" /> Показать</button>
 					</div>
 				</div>
-				<Info filmID={filmID} getInfoID={getInfoID} getInfo={getInfo} value={value} results={...film }/>
+				<Info visible={visible} setVisible={setVisible} getInfo={getInfo} value={value} results={...film }/>
 			</div>
 			<div className="footer">
 				<a target="_blank" href="https://github.com/Kolm-dev">
