@@ -37,6 +37,6 @@ yarn build
 Clicking on the ID will show more information on a particular result
 ## Screenshots
 
-![App Screenshot](https://i2.paste.pics/N4EL9.png)
+![App Screenshot](https://i2.paste.pics/N7POG.png)
 
-![App Screenshot2](https://i2.paste.pics/N4EJN.png)
+![App Screenshot2](https://i2.paste.pics/N7PQ1.png)
