@@ -1,15 +1,17 @@
 import axios from "axios"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import "./App.css"
 import Info from "./components/Info"
 import Button from './assets/button.svg'
+import Favorites from "./components/Favorites"
 function App() {
 	const [film, setFilm] = useState([])
 	const [visible, setVisible] = useState(true)
 	const [value, setValue] = useState()
+	const [favorites, setFavorite] = useState([])
+
 	const inputHandler = (e) => {
 		setValue(e.target.value)
-		value.replace(/\s/g, "+")
 	}
 	const URL = `https://api.themoviedb.org/3/search/movie?api_key=101e4f62667bccf1cbfbda8d5a381a88&query=${value}&language=ru-RU&include_image_language=ru,null`
 	const getInfo = () =>
@@ -21,7 +23,15 @@ function App() {
 		.then(res => setFilm(res.data.results))
 		.catch(e => console.error(e))
 		
-	
+
+		useEffect(() => {
+			const dataFromLocalStorage = localStorage.getItem("films")
+			if (dataFromLocalStorage) {
+				setFavorite(JSON.parse(dataFromLocalStorage))
+			}
+		}, [])
+
+
 
 	return (
 		<>
@@ -30,7 +40,6 @@ function App() {
 					<h1>Video Informer</h1>
 					<div>
 						<input
-						value={value}
 						onChange={inputHandler}
 							className="search-input"
 							placeholder="Введите фильм, который хотите найти?"
@@ -38,8 +47,9 @@ function App() {
 							name="search"
 							id="search"
 						/>
-						<button onClick={getInfo}> <img className="button-image" width="20px" src={Button} alt="button" /> Показать</button>
+						<button className="button-search" onClick={getInfo}> <img className="button-image" width="20px" src={Button} alt="button" /> Показать</button>
 					</div>
+						<Favorites favorites={favorites} setFavorite={setFavorite}/>
 				</div>
 				<Info visible={visible} setVisible={setVisible} getInfo={getInfo} value={value} results={...film }/>
 			</div>

@@ -22,6 +22,7 @@ const FilmID = ({id, title}) => {
 		let favoriteFilms = JSON.parse(localStorage.getItem("films"))
 		if (!favoriteFilms) favoriteFilms = []
 		favoriteFilms.push({title: title, id: id})
+
 		localStorage.setItem("films", JSON.stringify(favoriteFilms))
 	}
 

@@ -1,0 +1,16 @@
+.favorites {
+	background-color: #45b8d2;
+	position: absolute;
+	left: 5px;
+	top: 150px;
+	width: 150px;
+	border-radius: 15px;
+	padding: 20px;
+	font-family: "Courier New";
+}
+
+.favorites p {
+	color: white;
+	font-size: 18px;
+	text-align: left;
+}

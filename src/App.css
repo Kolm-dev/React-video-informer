@@ -1,9 +1,10 @@
 @font-face {
 	font-family: "Main";
-	src: url("./assets//fonts/RobotoCondensed-Regular.ttf");
+	src: url("./assets/fonts/Main-font.otf");
 	unicode-range: U+0000-00FF, U+0400-04FF;
 	font-weight: 400;
 }
+
 .footer {
 	position: sticky;
 	bottom: 0;
@@ -17,12 +18,7 @@
 	background: transparent;
 }
 
-.button-image {
-	position: absolute;
-	left: 10px;
-}
 .app {
-	background-color: rgb(4, 117, 87);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -30,33 +26,59 @@
 	padding: 20px 0px;
 }
 
-.app button {
-	position: relative;
+.button-search {
 	padding-right: 15px;
-	width: 120px;
-	text-align: right;
-	height: 35px;
+	width: 150px;
+	text-align: center;
+	height: 37px;
 	margin-left: 10px;
 	font-family: "Main";
 	color: white;
 	background-color: coral;
-	border: none;
 	border-radius: 15px;
 	text-transform: uppercase;
 	font-size: 16px;
 	font-weight: 600;
 }
 
-.app button:hover {
+.button-search:hover {
 	background-image: none;
 	background-color: rgb(211, 97, 55);
 	cursor: pointer;
 }
 
+.favorites-button {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	left: 0;
+	top: 50px;
+	align-items: center;
+	text-align: center;
+	font-size: 14px;
+	color: white;
+	font-size: 18px;
+	letter-spacing: 1.2px;
+	width: 25px;
+	border-radius: 5px;
+	height: 80px;
+	writing-mode: vertical-lr;
+	background-color: #3077be;
+	border: 1px solid #fff;
+}
+
+.favorites-button:hover {
+	transform: scale(1.2);
+	left: 5px;
+	cursor: none;
+	transition: all 0.1ms;
+	font-size: 18px;
+}
+
 h1 {
 	font-family: "Main", sans-serif;
 	font-size: 36px;
-	color: rgb(205, 128, 224);
+	color: rgb(12, 12, 12);
 	padding: 2px;
 	letter-spacing: 7px;
 	position: relative;
@@ -65,7 +87,7 @@ h1 {
 .search-input {
 	width: 320px;
 	height: 30px;
-	font-family: "Main";
+	font-family: Tahoma, sans-serif;
 	font-size: 14px;
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -93,4 +115,5 @@ h1 {
 .wrapper {
 	min-height: 100vh;
 	margin-bottom: -50px; /* высота футера */
+	background-image: url("../src/assets/app-bg.jpg");
 }

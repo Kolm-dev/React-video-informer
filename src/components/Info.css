@@ -40,7 +40,6 @@
 html,
 body {
 	height: 100%;
-	background-color: rgb(4, 117, 87);
 }
 
 .movie-title {
@@ -60,7 +59,6 @@ body {
 }
 
 .info-component {
-	background-color: rgb(4, 117, 87);
 	padding: 80px;
 	display: flex;
 	justify-content: center;
