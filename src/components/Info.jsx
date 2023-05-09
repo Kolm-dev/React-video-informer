@@ -1,16 +1,20 @@
-import React, {useState} from "react"
-import ClipLoader from "react-spinners/ClipLoader"
-import "./Info.css"
-import FilmID from "./FilmID"
+import React, { useState } from "react";
+import ClipLoader from "react-spinners/ClipLoader";
+import "./Info.css";
+import FilmID from "./FilmID";
 
 const Info = props => {
-	const {results, value, visible, setVisible} = props
-	const [idInfo, setIDInfo] = useState()
+	const { results, value, visible, setVisible } = props;
+	const [idInfo, setIDInfo] = useState();
 	return !value ? (
 		<div className="loader">
 			<p className="not-film">Введите название фильма...</p>
 			<div className="spinner">
-				<ClipLoader speedMultiplier={0.4} color="#fff" size={36} />
+				<ClipLoader
+					speedMultiplier={0.4}
+					color="#fff"
+					size={36}
+				/>
 			</div>
 		</div>
 	) : (
@@ -19,7 +23,9 @@ const Info = props => {
 				{visible ? (
 					results.map(film => {
 						return (
-							<div className="film" key={film.id}>
+							<div
+								className="film"
+								key={film.id}>
 								<img
 									className="film-image"
 									src={
@@ -35,8 +41,8 @@ const Info = props => {
 									<p
 										className="id-text"
 										onClick={() => {
-											setVisible(!visible)
-											setIDInfo({id: film.id, title: film.original_title})
+											setVisible(!visible);
+											setIDInfo({ id: film.id, title: film.original_title });
 										}}>
 										<strong>ID:</strong> {film.id}
 									</p>
@@ -54,14 +60,18 @@ const Info = props => {
 									</p>
 								</div>
 							</div>
-						)
+						);
 					})
 				) : (
-					<FilmID id={idInfo.id} title={idInfo.title} setVisible={setVisible} />
+					<FilmID
+						id={idInfo.id}
+						title={idInfo.title}
+						setVisible={setVisible}
+					/>
 				)}
 			</div>
 		</div>
-	)
-}
+	);
+};
 
-export default Info
+export default Info;

@@ -1,6 +1,6 @@
-import React from "react"
-import "./Favorites.css"
-const Favorites = ({favorites}) => {
+import React from "react";
+import "./Favorites.css";
+const Favorites = ({ favorites }) => {
 	return (
 		<div className="favorites">
 			Любимые фильмы
@@ -11,10 +11,10 @@ const Favorites = ({favorites}) => {
 						ID:${film.id}`}
 						<hr />
 					</p>
-				)
+				);
 			})}
 		</div>
-	)
-}
+	);
+};
 
-export default Favorites
+export default Favorites;
