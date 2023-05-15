@@ -9,7 +9,6 @@ const Favorites = ({ favorites }) => {
 					<p key={film.id}>
 						{`${film.title}
 						ID:${film.id}`}
-						<hr />
 					</p>
 				);
 			})}
